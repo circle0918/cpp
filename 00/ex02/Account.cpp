@@ -117,3 +117,8 @@ void Account::displayAccountsInfos()
     std::cout << "deposits:" << getNbDeposits() << ";";
     std::cout << "withdrawals:" << getNbWithdrawals() << std::endl;
 }
+
+int	Account::checkAmount( void ) const
+{
+	return _amount; 
+}
