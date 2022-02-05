@@ -16,5 +16,4 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-	std::cout << _name << " is destroyed" << std::endl;
 }

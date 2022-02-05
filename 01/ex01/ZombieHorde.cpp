@@ -8,4 +8,3 @@ Zombie* zombieHorde( int N, std::string name )
 		zbs[i] = Zombie(name);
 	return zbs; 
 }
-

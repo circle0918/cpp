@@ -8,9 +8,6 @@ int main()
 	{
 		group[i].annonce();
 	}
-
-/*		group->annonce();	
-		Zombie *group1 = (group->getPtr())[1];
-		group1->annonce();	*/
+	delete[] group;
 	return 0;
 }
