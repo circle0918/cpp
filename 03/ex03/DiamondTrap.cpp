@@ -1,29 +1,23 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap():ClapTrap()
 {
 	std::cout << "default constructor Diamond is called" << std::endl;
 	this->name = "";
-	_hit = FragTrap::_hit;
 	this->_egy = ScavTrap::_egy;
+	this->_hit = FragTrap::_hit;
 	this->_dmg = FragTrap::_dmg;
 	ScavTrap::_dmg = FragTrap::_dmg;
-	std::cout << "d0 : " << FragTrap::_dmg << std::endl;
 
 }
 
-DiamondTrap::DiamondTrap(std::string str)
+DiamondTrap::DiamondTrap(std::string str):ClapTrap(str)
 {
 	std::cout << "default constructor Diamond with his name is called" << std::endl;
 	this->name = str;
 	this->_name = str + "_clap_name";
 	this->_hit = FragTrap::_hit;
-	// std::cout << FragTrap::_hit << std::endl;
-	// std::cout << ScavTrap::_hit << std::endl;
-	// std::cout << ClapTrap::_hit << "Clap" << std::endl;
-	// std::cout << this->_hit << std::endl;
 	this->_egy = ScavTrap::_egy;
-	std::cout << "d1 : " << FragTrap::_dmg << std::endl;
 	this->_dmg = FragTrap::_dmg;
 	ScavTrap::_dmg = FragTrap::_dmg;
 }
@@ -63,10 +57,3 @@ void DiamondTrap::whoAmI()
 	std::cout << "my name is " << name << std::endl;
 	std::cout << "my parent name is " << _name << std::endl;
 }
-
-unsigned int DiamondTrap::getDmg()
-{
-	return (this->_dmg);
-}
-
-

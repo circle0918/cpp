@@ -3,22 +3,18 @@
 ScavTrap::ScavTrap()
 {
 	std::cout << "default constructor Scav is called" << std::endl;
-	this->_hit = 80;
+	this->_hit = 100;
 	this->_egy = 50;
 	this->_dmg = 20;
-		std::cout << "s0 : " << ScavTrap::_dmg << std::endl;
-
 }
 
 ScavTrap::ScavTrap(std::string str)
 {
 	std::cout << "default constructor Scav with his name is called" << std::endl;
 	this->_name = str;
-	this->_hit = 80;
+	this->_hit = 100;
 	this->_egy = 50;
 	this->_dmg = 20;
-		std::cout << "s1 : " << ScavTrap::_dmg << std::endl;
-
 }
 
 ScavTrap::ScavTrap(const ScavTrap &obj)

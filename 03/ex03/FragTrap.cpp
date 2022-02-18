@@ -6,8 +6,6 @@ FragTrap::FragTrap()
 	this->_hit = 100;
 	this->_egy = 100;
 	this->_dmg = 30;
-		std::cout << "f0 : " << FragTrap::_dmg << std::endl;
-
 }
 
 FragTrap::FragTrap(std::string str)
@@ -17,8 +15,6 @@ FragTrap::FragTrap(std::string str)
 	this->_hit = 100;
 	this->_egy = 100;
 	this->_dmg = 30;
-		std::cout << "f1 : " << FragTrap::_dmg << std::endl;
-
 }
 
 FragTrap::FragTrap(const FragTrap &obj)
