@@ -14,6 +14,9 @@ DiamondTrap::DiamondTrap():ClapTrap()
 DiamondTrap::DiamondTrap(std::string str):ClapTrap(str)
 {
 	std::cout << "default constructor Diamond with his name is called" << std::endl;
+	ScavTrap::setEgy();
+	FragTrap::setDmg();
+	FragTrap::setHit();
 	this->name = str;
 	this->_name = str + "_clap_name";
 	this->_hit = FragTrap::_hit;

@@ -49,3 +49,12 @@ void FragTrap::attack(void)
 {
 	std::cout << "Frag " << _name << " is attacking" << std::endl;
 }
+
+void FragTrap::setDmg()
+{
+	this->_dmg = 30;
+}
+void FragTrap::setHit()
+{
+	this->_hit = 100;
+}

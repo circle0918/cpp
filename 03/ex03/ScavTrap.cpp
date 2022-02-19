@@ -53,3 +53,8 @@ void ScavTrap::attack(const std::string &target)
 		_egy--;
 	}
 }
+
+void ScavTrap::setEgy()
+{
+	this->_egy = 50;
+}
