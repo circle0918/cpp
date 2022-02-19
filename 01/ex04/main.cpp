@@ -2,7 +2,10 @@
 int main(int ac, char **av)
 {
 	if (ac != 4 || std::string(av[2]).empty() || std::string(av[3]).empty())
+	{
 		std::cout << "error arguments" << std::endl;
+		return 1;
+	}
 	else
 	{
 		Sed sed;
