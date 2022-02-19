@@ -1,8 +1,8 @@
 #ifndef CAT_HPP
 #define CAT_HPP
-#include "Aminal.hpp"
+#include "Animal.hpp"
 
-class Dog : virtual public Aminal{
+class Dog : virtual public Animal{
 
 };
 #endif
