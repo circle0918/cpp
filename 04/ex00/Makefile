@@ -10,14 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 NAME     = Polymorphisme
-CC       = clang++
+CC       = c++
 # compiling flags here
 CFLAGS   = -Wall -Wextra -Werror -std=c++98
 #CFLAGS   = -Wall -Wextra -Werror
 
-LINKER   = clang++
+LINKER   = c++
 # linking flags here
-LFLAGS   = -Wall -Wextra -Werror
+LFLAGS   = -Wall -Wextra -Werror -std=c++98
 #LFLAGS   = -Wall -Wextra -Werror
 
 # change these to proper directories where each file should be

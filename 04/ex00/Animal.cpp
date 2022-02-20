@@ -1,24 +1,29 @@
 #include "Animal.hpp"
 
-Animal::Animal():_type("")
+Animal::Animal():_type("Animal")
 {
     std::cout << "default Animal constructor is called" << std::endl;
 }
 Animal::Animal(const Animal &obj)
 {
-    std::cout << "default Animal constructor is called" << std::endl;
     _type = obj._type;
 }
 Animal::~Animal()
 {
+    std::cout << "default Animal destructor is called" << std::endl;
 }
 Animal& Animal::operator=(const Animal &obj)
 {
+    if(this != &obj)
+        _type = obj._type;
+    return *this;
 }
-void const Animal::makeSound()
+void Animal::makeSound() const
 {
+    std::cout << "Animal makes sound" << std::endl;
 }
-std::string Animal::GetType()
+
+std::string Animal::getType() const
 {
     return (_type);
 }

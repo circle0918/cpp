@@ -2,7 +2,12 @@
 #define CAT_HPP
 #include "Animal.hpp"
 
-class Dog : virtual public Animal{
-
+class Cat : public Animal{
+	public:
+        Cat();
+        Cat(const Cat &obj);
+        ~Cat();
+        Cat& operator=(const Cat &obj);
+		void makeSound() const;
 };
 #endif
