@@ -16,9 +16,11 @@ int main()
 	meta->makeSound();
 	std::cout << meta->getType() << " " << std::endl;
 	const WrongAnimal* wAnimal = new WrongAnimal();
-	const WrongCat* wCat = new WrongCat();
+	const WrongAnimal* wCat = new WrongCat();
+	const WrongCat* wCatcat = new WrongCat();
 	wAnimal->makeSound();
 	wCat->makeSound();
+	wCatcat->makeSound();
 	delete meta;
 	delete i;
 	delete j;
