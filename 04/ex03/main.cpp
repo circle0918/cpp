@@ -1,23 +1,32 @@
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "Character.hpp"
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 #include "Ice.hpp"
+#include "Cure.hpp"
 
 int main()
 {
-// IMateriaSource* src = new MateriaSource();
-// src->learnMateria(new Ice());
-// src->learnMateria(new Cure());
-// ICharacter* me = new Character("me");
-	AMateria *tmp = new Ice;
-// tmp = src->createMateria("ice");
-// me->equip(tmp);
-// tmp = src->createMateria("cure");
-// me->equip(tmp);
-// ICharacter* bob = new Character("bob");
-// me->use(0, *bob);
-// me->use(1, *bob);
-// delete bob;
-// delete me;
-// delete src;
-return 0;
-}
+	// test for operator=
+	// Character c1 = Character("me");
+	// Character c2;
+
+	// c2 = c1;
+	// std::cout << "=================" << std::endl;
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
+	return 0;
+}                                               

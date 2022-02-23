@@ -8,6 +8,10 @@ AMateria::AMateria(std::string const & type)
 {
 	_type = type;
 }
+AMateria::AMateria(AMateria const &obj)
+{
+	*this = obj;
+}
 AMateria::~AMateria()
 {
 	std::cout << "default AMateria destructor is called" << std::endl;
@@ -24,5 +28,5 @@ std::string const &AMateria::getType() const
 }
 void AMateria::use(ICharacter& target)
 {
-	std::cout << "AMateria use fonction" << std::endl;
+	std::cout << "AMateria use " << target.getName() << std::endl;
 }

@@ -3,11 +3,10 @@
 Ice::Ice()
 {
 	std::cout << "default Ice constructor is called" << std::endl;
-	_type = "ice"
+	_type = "ice";
 }
-Ice::Ice(Ice const &obj)
+Ice::Ice(Ice const &obj): AMateria(obj)
 {
-	_type = obj._type;
 }
 Ice::~Ice()
 {

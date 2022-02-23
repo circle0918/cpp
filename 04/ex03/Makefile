@@ -9,7 +9,7 @@
 #    Updated: 2022/02/19 17:25:43 by yyuan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-NAME     = inter
+NAME     = interface
 CC       = c++
 # compiling flags here
 CFLAGS   = -Wall -Wextra -Werror -std=c++98
@@ -29,6 +29,8 @@ BINDIR   = .
 SOURCES  := $(wildcard $(SRCDIR)/*.cpp)
 INCLUDES := $(wildcard $(SRCDIR)/*.hpp)
 OBJECTS  := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+DEPS  := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.d)
+INCLUDE = include
 rm       = rm -f
 
 all: $(BINDIR) $(OBJDIR) $(BINDIR)/$(NAME)
@@ -38,7 +40,7 @@ $(BINDIR)/$(NAME): $(OBJECTS)
 	@echo "Linking complete!"
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 	@echo "Compiled "$<" successfully!"
 
 $(OBJDIR):
@@ -48,7 +50,7 @@ $(BINDIR):
 	@mkdir -p $(BINDIR)
 
 clean:
-	@$(rm) $(OBJECTS)
+	@$(rm) $(OBJECTS) $(DEPS)
 	@$(rm) -r $(OBJDIR)
 	@echo "Cleanup complete!"
 
@@ -57,5 +59,7 @@ fclean: clean
 	@echo "Executable removed!"
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re bonus 

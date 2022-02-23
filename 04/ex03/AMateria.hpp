@@ -4,12 +4,15 @@
 #include <string>
 #include <iostream>
 
+class ICharacter;
+
 class AMateria
 {
 protected:
 	std::string _type;
 public:
 	AMateria();
+	AMateria(AMateria const &obj);
 	AMateria(std::string const & type);
 	virtual ~AMateria();
 	AMateria &operator=(const AMateria &obj);
