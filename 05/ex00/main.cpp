@@ -3,6 +3,7 @@
 int main()
 {
 	Bureaucrat A("leo", 150);
+	std::cout << A;
 	try{
 		A.increaseGrade();
 	}
