@@ -7,6 +7,8 @@
 #include <cstdlib>
 #include <ctime>
 
+class Bureaucrat;
+
 class Form{
 	private:
 		std::string const _name;

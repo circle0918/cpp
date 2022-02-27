@@ -1,13 +1,13 @@
 #include "Form.hpp"
 
-Form::Form():_name(""),_sGrade(100),_eGrade(100),_signed(false)
+Form::Form():_name(""), _signed(false), _sGrade(100), _eGrade(100)
 {
-	std::cout << "default constructor is called" << std::endl;
+	std::cout << "default constructor F is called" << std::endl;
 }
 
-Form::Form(std::string name, unsigned int x, unsigned int y):_name(name),_sGrade(x),_eGrade(y),_signed(false)
+Form::Form(std::string name, unsigned int x, unsigned int y):_name(name), _signed(false), _sGrade(x), _eGrade(y)
 {
-	std::cout << "default constructor with name and grade is called" << std::endl;
+	std::cout << "default constructor F with name and grade is called" << std::endl;
 	if(_sGrade > 150 || _eGrade > 150)
 	{
 		throw low;
@@ -18,15 +18,15 @@ Form::Form(std::string name, unsigned int x, unsigned int y):_name(name),_sGrade
 	}
 }
 
-Form::Form(Form const &obj):_signed(obj._signed),_name(obj._name),_sGrade(obj._sGrade),_eGrade(obj._eGrade)
+Form::Form(Form const &obj):_name(obj._name), _signed(obj._signed), _sGrade(obj._sGrade), _eGrade(obj._eGrade)
 {
-	std::cout << "copy assignment is called" << std::endl;
+	std::cout << "copy assignment F is called" << std::endl;
 	*this = obj;
 }
 
 Form::~Form()
 {
-	std::cout << "default destructor is called" << std::endl;
+	std::cout << "default destructor F is called" << std::endl;
 }
 
 Form& Form::operator=(Form const &obj)
@@ -59,14 +59,19 @@ bool Form::getSigned() const
 void Form::beSigned(Bureaucrat &obj)
 {
     if(obj.getGrade() > getsGrade())
-        throw low;
+	{
+		obj.signForm(*this);
+	}
     else
+	{
         _signed = true;
+		obj.signForm(*this);
+	}
     return;
 }
 
 std::ostream &operator<<(std::ostream &output, Form const &obj)
 {
-	output << obj.getName() << " : " << "execute grade is : " << obj.geteGrade() << "and sign grade is " << obj.getsGrade() << " and his statut is " << obj.getSigned() << std::endl;
+	output << obj.getName() << " : " << "execute grade is : " << obj.geteGrade() << ", sign grade is " << obj.getsGrade() << " and his statut is " << obj.getSigned() << std::endl;
 	return output;
 }

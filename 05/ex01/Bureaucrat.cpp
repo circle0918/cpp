@@ -2,12 +2,12 @@
 
 Bureaucrat::Bureaucrat():_name(""),_grade((rand()% 150) + 1)
 {
-	std::cout << "default constructor is called" << std::endl;
+	std::cout << "default constructor B is called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(std::string name, unsigned int grade):_name(name),_grade(grade)
 {
-	std::cout << "default constructor with name and grade is called" << std::endl;
+	std::cout << "default constructor B with name and grade is called" << std::endl;
 	if(grade > 150)
 	{
 		std::cout << name << ": " ;
@@ -22,13 +22,13 @@ Bureaucrat::Bureaucrat(std::string name, unsigned int grade):_name(name),_grade(
 
 Bureaucrat::Bureaucrat(Bureaucrat const &obj)
 {
-	std::cout << "copy assignment is called" << std::endl;
+	std::cout << "copy assignment B is called" << std::endl;
 	*this = obj;
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "default destructor is called" << std::endl;
+	std::cout << "default destructor B is called" << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const &obj)
@@ -72,9 +72,13 @@ void Bureaucrat::decreaseGrade()
 
 void Bureaucrat::signForm(Form &obj)
 {
-	if (obj.beSigned(*this))
-		std::cout << _name << " signed " << obj.getName();
-	
+	if (obj.getSigned())
+		std::cout << _name << " signed " << obj.getName() << std::endl;
+	else
+	{
+			std::cout << _name << " couldn't sign " << obj.getName() << " because ";
+			throw obj.low;
+	}
 }
 
 std::ostream &operator<<(std::ostream &output, Bureaucrat const &obj)
