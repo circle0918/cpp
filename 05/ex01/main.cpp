@@ -33,7 +33,7 @@ int main()
 		std::cout << e.what();
 	}
 	std::cout << "===============================================" << std::endl;
-	Bureaucrat A("leo", 100);
+	Bureaucrat A("leo", 101);
 	Form F("form_1", 100, 60);
 	try{
 	
