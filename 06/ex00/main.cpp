@@ -64,22 +64,6 @@ int main(int ac, char **av)
         std::cout << "wrong arguement" << std::endl;
         return 1;
     }
-    detectType(av[1]);
-        const std::string s = av[1];
-        //char n = 'b';
-        //int n = 42;
-        //float n = 42.123456789;
-        //double n = 42.123456789;
-        double n = strtod(s.c_str(), NULL);
-
-        char c = static_cast<char>(n);
-        std::cout<< "c: " << c << "\n";
-        std::cout<< "c: " << int(c) << "\n";
-        int i = static_cast<int>(n);
-        std::cout<< "i: " << i << "\n";        
-        float f = static_cast<float>(n);
-        std::cout<< "f: " << f << "\n";
-        double d = static_cast<double>(n);
-        std::cout<< "d: " << d << "\n";   
+    detectType(av[1]); 
     return (0);
 }
