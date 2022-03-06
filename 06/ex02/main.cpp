@@ -13,11 +13,11 @@ Base* generate(void)
 	Base* b;
     /* initialize random seed: */
     srand (time(NULL));
-    /* generate number between 1 and 10: */
+    /* generate number between 1 and 3: */
     int num = rand() % 3 + 1;
-	if (num == 0)
+	if (num == 1)
 		b = new A;
-	else if (num == 1)
+	else if (num == 2)
 		b = new B;
 	else
 		b = new C;
@@ -26,7 +26,7 @@ Base* generate(void)
 
 void identify(Base* p)
 {
-	if (dynamic_cast<A *>(p) != NULL)
+	if (dynamic_cast<A *>(p) != NULL) // resussi dynamic_cast return non 0; sinon null;
 		std::cout << "A" << std::endl;
 	else if (dynamic_cast<B *>(p) != NULL)
 		std::cout << "B" << std::endl;

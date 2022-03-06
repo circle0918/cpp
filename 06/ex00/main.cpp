@@ -5,9 +5,15 @@
 
 static bool isZero(const std::string& s)
 {
-    for(size_t i = 0; i < s.length(); i++)
+    size_t i = 0;
+
+    //any char can be '0' or '.'
+    for(; i < s.length() - 1; i++)
         if (!(s[i] == '0' || s[i] == '.'))
             return false;
+    //last char can be '0', '.', 'f'
+    if (!(s[i] == '0' || s[i] == '.' || s[i] == 'f'))
+        return false;
     return true;
 }
 
@@ -16,6 +22,11 @@ static bool isInfinite(const std::string& s)
     return (s == "inf" || s == "+inf" || s == "-inf"
             || s == "nan" || s == "+nan" || s == "-nan");
 }
+
+//42.0f = float
+//inff, nanf = float
+
+//42.0 inf nan = double
 
 static void detectType(const std::string& s)
 {
@@ -32,7 +43,6 @@ static void detectType(const std::string& s)
         const std::string ss = s.substr(0, s.length() - 1);
         if (isInfinite(ss) || (!isInfinite(s) && s[s.length()-1] == 'f'))
         {
-           
             float param = (float)d;
             Convert c_float = Convert(param);
             c_float.setCharIntImpossible(isInfinite(ss));

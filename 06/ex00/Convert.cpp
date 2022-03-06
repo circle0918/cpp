@@ -19,7 +19,13 @@ Convert::~Convert()
 Convert& Convert::operator=(Convert const &obj)
 {
 	if(this != &obj)
-		std::cout << "you can't assign this to anthor" << std::endl; //const parameters can't be assigned
+	{
+        _c = obj._c;
+        _i = obj._i;
+        _f = obj._i;
+        _d = obj._d;
+        _is_char_int_Impossible = obj._is_char_int_Impossible;
+    }
 	return *this;
 }
 
